@@ -43,7 +43,7 @@ export const MessagesProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         body: JSON.stringify({
           model: model,
           messages: newArrayMessages, // messages
-          max_tokens: 300,
+          max_tokens: 250,
           temperature: 0.5
         }),
       });
@@ -51,7 +51,7 @@ export const MessagesProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       const data = await response.json();
       setMessages([
         ...newArrayMessages,
-        { role: 'assistant', content: data.choices[0].message.content }
+        { role: 'assistant', content: data.choices[0].message.content.slice(0, 250) }
       ]);
 
     } catch (error) {

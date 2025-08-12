@@ -10,7 +10,7 @@ export const FloatingChat = () => {
   useEffect(() => {
     setPositions((old) => {
       if (filteredMessages.length > old.length) {
-        const increment = window.innerWidth < 375 ? 180 : window.innerWidth < 480 ? 150 : 100;
+        const increment = window.innerWidth < 321 ? 210 : window.innerWidth < 500 ? 180 : 90;
         const updatedOld = old.map(pos => pos + increment);
         return [...updatedOld, 0];
       }
