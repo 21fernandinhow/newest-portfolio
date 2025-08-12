@@ -1,9 +1,10 @@
 #samantha {
     position: fixed;
-    bottom: 12vh;
-    width: 16rem;
-    height: 16rem;
+    left: 0;
+    bottom: 0;
+    width: 15rem;
+    height: 15rem;
     pointer-events: none;
-    z-index: 1000;
+    z-index: 999;
     background: transparent;
 }

@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Group } from "three";
-import './style.scss'
 
 export const Samantha = () => {
     const group = useRef<Group | null>(null);

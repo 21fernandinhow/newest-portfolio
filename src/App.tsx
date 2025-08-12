@@ -1,11 +1,18 @@
+import { FloatingChat } from "./components/FloatingChat"
+import { MessageInput } from "./components/MessageInput"
 import { Samantha } from "./components/Samantha"
-import './styles/layout.scss'
+import { MessagesProvider } from "./context/MessagesContext"
+import './styles/index.scss'
 
 const App = () => {
 
   return (
     <>
-      <Samantha />
+      <MessagesProvider>
+        <FloatingChat />
+        <Samantha />
+        <MessageInput />
+      </MessagesProvider>
     </>
   )
 }

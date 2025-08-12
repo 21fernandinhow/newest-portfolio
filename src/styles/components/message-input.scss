@@ -1,0 +1,40 @@
+.user-message-input {
+    position: fixed;
+    bottom: 1.5rem;
+    z-index: 1000;
+    left: 2vw;
+
+    width: 96vw;
+    font-size: 1rem;
+    color: var(--text-color);
+
+    display: flex;
+    align-content: center;
+    gap: 0.5rem;
+
+    input {
+        flex-grow: 1;
+        &::placeholder{
+            color: var(--secondary-text-color);
+        }
+    }
+
+    input,
+    button {
+        border: none;
+        background: none;
+        outline: none;
+    }
+
+    button {
+        cursor: pointer;
+        font-size: 1.2rem;
+        display: flex;
+        align-content: center;
+
+        &:hover{
+            transition: 0.3s;
+            color: var(--highlight-color);
+        }
+    }
+}
