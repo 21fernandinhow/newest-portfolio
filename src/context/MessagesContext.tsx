@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { systemMessage } from "../samanthaPrompt";
 
 export interface Message {
@@ -24,7 +24,11 @@ export const MessagesProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   const apiKey = import.meta.env.VITE_OPENAI_APIKEY;
   const model = "gpt-3.5-turbo"
-  const [messages, setMessages] = useState<Message[]>([])
+  const initialMessage = "Oi! Eu sou a Samantha, inteligência artificial criada pelo Fernando Carvalho. Estou aqui para contar tudo sobre o trabalho dele como desenvolvedor FullStack e mostrar seus projetos. Arraste para o lado para navegar ➡️"
+  const [messages, setMessages] = useState<Message[]>([
+    { role: "system", content: systemMessage + new Date().toISOString() },
+    { role: "assistant", content: initialMessage }
+  ])
   const [isWaitingAnswer, setIsWaitingAnswer] = useState(false)
 
   const sendMessageToAI = async (messageText: string, role: string) => {
@@ -60,10 +64,6 @@ export const MessagesProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
     setIsWaitingAnswer(false)
   }
-
-  useEffect(() => {
-    if (messages.length === 0 && !isWaitingAnswer) sendMessageToAI(`${systemMessage} ${new Date().toISOString()}`, 'system')
-  }, [])
 
   return (
     <MessagesContext.Provider value={{ messages, sendMessageToAI, isWaitingAnswer }}>

@@ -10,7 +10,7 @@ export const FloatingChat = () => {
   useEffect(() => {
     setPositions((old) => {
       if (filteredMessages.length > old.length) {
-        const increment = window.innerWidth < 321 ? 210 : window.innerWidth < 500 ? 180 : 90;
+        const increment = window.innerWidth < 350 ? 220 : window.innerWidth < 500 ? 180 : 90;
         const updatedOld = old.map(pos => pos + increment);
         return [...updatedOld, 0];
       }
@@ -21,7 +21,7 @@ export const FloatingChat = () => {
   useEffect(() => {
     let rafId: number;
     let lastTime: number | null = null;
-    const speed = 10; // px por segundo
+    const speed = 10; // px per second
 
     const animate = (time: number) => {
       if (!lastTime) lastTime = time;

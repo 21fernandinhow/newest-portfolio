@@ -1,8 +1,11 @@
 @use './utils/variables.scss' ;
 @use './utils/layout.scss';
 @use './utils/responsivity.scss';
+@use './pages/home-page.scss';
+@use './pages/project-page.scss';
 @use './components/samantha.scss';
 @use './components/message-input.scss';
 @use './components/floating-chat.scss';
+@use './components/content-carousel.scss';
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');

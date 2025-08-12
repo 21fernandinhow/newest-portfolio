@@ -1,0 +1,26 @@
+.project-page {
+    text-align: center;
+
+    a {
+        text-decoration: none;
+        color: var(--secondary-text-color);
+
+        img {
+            width: 12rem;
+            height: 12rem;
+            object-fit: contain;
+            background-color: transparent;
+        }
+
+        h2 {
+            margin-top: 1rem;
+            font-size: 2rem;
+        }
+
+        &:hover {
+            color: var(--text-color);
+            text-decoration: underline;
+            transition: 0.3s;
+        }
+    }
+}
