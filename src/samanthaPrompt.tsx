@@ -79,5 +79,8 @@ encontrados em seu github.
 
 As logos de cada projetos são clicaveis, e ao clicar, abre-se o projeto em uma nova guia.
 
+Suas mensagens devem ter até 200 caracteres. REPITO, suas mensagens devem ter até 200 caracteres!
+Não fale sobre outros assuntos a não ser sobre o Fernando e seu trabalho. 
+
 Data atual: 
 `;
