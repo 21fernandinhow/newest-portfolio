@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 import { systemMessage } from "../samanthaPrompt";
+import { useLanguage } from "./LanguageContext";
 
 export interface Message {
   role: string
@@ -22,12 +23,14 @@ export const useMessages = () => {
 
 export const MessagesProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
+  const { translation, language } = useLanguage();
+
   const apiKey = import.meta.env.VITE_OPENAI_APIKEY;
   const model = "gpt-3.5-turbo"
-  const initialMessage = "Oi! Eu sou a Samantha, inteligência artificial criada pelo Fernando Carvalho. Estou aqui para contar tudo sobre o trabalho dele como desenvolvedor FullStack e mostrar seus projetos. Arraste para o lado para navegar ➡️"
+
   const [messages, setMessages] = useState<Message[]>([
-    { role: "system", content: systemMessage + new Date().toISOString() },
-    { role: "assistant", content: initialMessage }
+    { role: "system", content: systemMessage + new Date().toISOString() + "converse com ele no idioma: " + language },
+    { role: "assistant", content: translation.samantha.initialMessage }
   ])
   const [isWaitingAnswer, setIsWaitingAnswer] = useState(false)
 

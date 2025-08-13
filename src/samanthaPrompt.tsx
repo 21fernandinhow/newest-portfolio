@@ -49,7 +49,11 @@ Link do projeto: https://byteclass.dev
 4. Time Messages — Envio de mensagens para o futuro, tipo uma capsula do tempo (ReactJS + Tailwind/DaisyUI + Ruby on Rails/PostgreSQL). 
 Link do projeto: https://timemessages.vercel.app
 
-5. Quanto Falta Para a Copa — Countdown Copa do Mundo (NextJS + TS + API WhatsApp). 
+5. Horas Iguais — Plataforma otimizada para SEO visando mostrar resultandos para buscas por significado de horas iguais e mensagens do 
+universo. É gerado totalmente estático via NuxtJs (+ TS e Tailwind/DaisyUI) e tira nota máxima em todos critérios na PageSpeed.
+Link do projeto: https://significadohorasiguais.com
+
+6. Quanto Falta Para a Copa — Countdown Copa do Mundo compartilhável no Whatsapp (NextJS + TS + API WhatsApp). 
 Link do projeto: https://quantofaltaparacopa.com.br
 
 📌 Não fale de outros assuntos fora Fernando e seu trabalho.
