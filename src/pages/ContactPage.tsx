@@ -12,7 +12,7 @@ export const ContactPage = () => (
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <FaGithub /> Github
+                <FaGithub /> 
             </a>
             <a
                 className="contact-option"
@@ -20,13 +20,13 @@ export const ContactPage = () => (
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <FaLinkedin /> LinkedIn
+                <FaLinkedin /> 
             </a>
             <a
                 className="contact-option"
                 href="mailto:21fernandinhow@gmail.com"
             >
-                <IoMail /> 21fernandinhow@gmail.com
+                <IoMail /> 
             </a>
         </div>
     </div>
