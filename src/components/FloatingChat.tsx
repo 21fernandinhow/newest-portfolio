@@ -43,7 +43,6 @@ export const FloatingChat = () => {
       ref={containerRef}
       className="chat-container"
     >
-      <div className="top-line"></div>
       {filteredMessages
         .map((msg, index) => (
           <div
