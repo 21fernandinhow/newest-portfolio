@@ -7,12 +7,7 @@ export const GlobalLoader = () => {
     return (
         <div className="global-loader">
             <HomePage />
-            <div className="progress-container">
-                <div
-                    className="progress-bar"
-                    style={{ width: `${progress.toFixed(0)}%` }}
-                />
-            </div>
+            <div className="spinner" />
             <div className="progress-text">{progress.toFixed(0)}%</div>
         </div>
     );
