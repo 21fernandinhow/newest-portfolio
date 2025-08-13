@@ -9,6 +9,10 @@
         margin-bottom: 1rem;
     }
 
+    h2,p{
+        color: var(--text-color);
+    }
+
     .contact-options {
         display: flex;
         flex-direction: column;

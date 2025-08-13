@@ -2,6 +2,7 @@ import { ContentCarousel } from "./components/ContentCarousel"
 import { FloatingChat } from "./components/FloatingChat"
 import { MessageInput } from "./components/MessageInput"
 import { Samantha } from "./components/Samantha"
+import ThemeButton from "./components/ThemeButton"
 import { MessagesProvider } from "./context/MessagesContext"
 import { ContactPage } from "./pages/ContactPage"
 import { HomePage } from "./pages/HomePage"
@@ -13,6 +14,8 @@ const App = () => {
   return (
     <>
       <MessagesProvider>
+
+        <ThemeButton />
 
         <ContentCarousel
           items={[
