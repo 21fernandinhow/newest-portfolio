@@ -47,13 +47,7 @@ export const ContentCarousel = ({ items }: ContentCarouselProps) => {
 
   return (
     <div className="carousel-container">
-      <button
-        className="carousel-arrow left"
-        onClick={handlePrev}
-        disabled={currentIndex === 0}
-      >
-        <IoIosArrowBack />
-      </button>
+      {currentIndex > 0 && <button className="carousel-arrow left" onClick={handlePrev}><IoIosArrowBack /> </button>}
 
       <div className="carousel-wrapper" ref={containerRef}>
         {items.map((item, index) => (
@@ -63,13 +57,7 @@ export const ContentCarousel = ({ items }: ContentCarouselProps) => {
         ))}
       </div>
 
-      <button
-        className="carousel-arrow right"
-        onClick={handleNext}
-        disabled={currentIndex === items.length - 1}
-      >
-        <IoIosArrowForward />
-      </button>
+      {currentIndex < items.length - 1 && <button className="carousel-arrow right" onClick={handleNext}><IoIosArrowForward /></button>}
     </div>
   );
 };
