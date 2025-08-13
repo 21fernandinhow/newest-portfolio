@@ -9,6 +9,7 @@ export const translations = {
       description: "Aqui estão as principais formas de se conectar comigo:",
     },
     typeHere: "Faça uma pergunta a Samantha...",
+    you: "Você"
   },
   en: {
     samantha: {
@@ -20,5 +21,6 @@ export const translations = {
       description: "Here are the main ways to get in touch with me:",
     },
     typeHere: "Ask Samantha...",
+    you: "You"
   },
 };

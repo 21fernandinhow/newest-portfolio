@@ -1,12 +1,15 @@
 import { useEffect, useState, useRef } from "react";
 import { useMessages } from "../context/MessagesContext";
 import { IoMdClose } from "react-icons/io";
+import { useLanguage } from "../context/LanguageContext";
 
 export const FloatingChat = () => {
-  const { messages } = useMessages();
+  const { messages } = useMessages()
+  const { translation } = useLanguage()
+
   const [positions, setPositions] = useState<number[]>([]);
   const [hiddenMessages, setHiddenMessages] = useState<number[]>([]);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null)
   const filteredMessages = messages.filter((msg) => msg.role !== "system")
 
   useEffect(() => {
@@ -58,7 +61,7 @@ export const FloatingChat = () => {
             className={`chat-message ${msg.role === "user" ? "user-message" : ""}`}
           >
             <div className="message-header">
-              {msg.role !== "user" && <h4>Samantha</h4>}
+              {msg.role === "user" ? <h4>{translation.you}</h4> : <h4>Samantha</h4>}
               <button
                 className="close-btn"
                 onClick={() => hideMessage(index)}
