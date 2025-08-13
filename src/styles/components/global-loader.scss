@@ -1,0 +1,39 @@
+.global-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color, #000);
+    color: var(--text-color, #fff);
+    z-index: 9999;
+
+    #home-page{
+        margin-bottom: 2rem;
+    }
+
+    .progress-container {
+        width: 60%;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 12px;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background: var(--highlight-color);
+        width: 0;
+        transition: width 0.3s ease;
+    }
+
+    .progress-text {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}

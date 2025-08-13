@@ -1,79 +1,82 @@
-import { ContentCarousel } from "./components/ContentCarousel"
-import { FloatingChat } from "./components/FloatingChat"
-import { MessageInput } from "./components/MessageInput"
-import { Samantha } from "./components/Samantha"
-import ThemeButton from "./components/ThemeButton"
-import { LanguageProvider } from "./context/LanguageContext"
-import { MessagesProvider } from "./context/MessagesContext"
-import { ContactPage } from "./pages/ContactPage"
-import { HomePage } from "./pages/HomePage"
-import { ProjectPage } from "./pages/ProjectPage"
-import './styles/index.scss'
+import { Suspense } from "react";
+import { ContentCarousel } from "./components/ContentCarousel";
+import { FloatingChat } from "./components/FloatingChat";
+import { MessageInput } from "./components/MessageInput";
+import { Samantha } from "./components/Samantha";
+import ThemeButton from "./components/ThemeButton";
+import { LanguageProvider } from "./context/LanguageContext";
+import { MessagesProvider } from "./context/MessagesContext";
+import { ContactPage } from "./pages/ContactPage";
+import { HomePage } from "./pages/HomePage";
+import { ProjectPage } from "./pages/ProjectPage";
+import { GlobalLoader } from "./components/GlobalLoader"; // import do loader
+import './styles/index.scss';
 
 const App = () => {
-
   return (
     <>
-      <LanguageProvider>
-        <MessagesProvider>
+      <ThemeButton />
 
-          <ThemeButton />
+      <Suspense fallback={<GlobalLoader />}>
+        <LanguageProvider>
+          <MessagesProvider>
 
-          <ContentCarousel
-            items={[
-              <HomePage />,
-              <ProjectPage
-                title="tudoaqui.click"
-                projectUrl="https://tudoaqui.click"
-                imgSrc="./tudoaqui.webp"
-                slug="tudoaqui"
-              />,
-              <ProjectPage
-                title="Bolso Cheio AI"
-                projectUrl="https://bolsocheio.ai"
-                imgSrc="./bolsocheioai.webp"
-                slug="bolsocheio"
-              />,
-              <ProjectPage
-                title="ByteClass"
-                projectUrl="https://byteclass.dev"
-                imgSrc="./byteclass.webp"
-                slug="byteclass"
-              />,
-              <ProjectPage
-                title="Time Messages"
-                projectUrl="https://timemessages.vercel.app"
-                imgSrc="./time-messages.webp"
-                slug="timemessages"
-              />,
-              <ProjectPage
-                title="Horas Iguais"
-                projectUrl="https://significadohorasiguais.com"
-                imgSrc="./horasiguais.webp"
-                slug="horasiguais"
-                customClass="trophy"
-              />,
-              <ProjectPage
-                title="Quanto falta para copa"
-                projectUrl="https://quantofaltaparacopa.com.br"
-                imgSrc="./quantofaltaparacopa.webp"
-                slug="quantofaltaparacopa"
-                customClass="trophy"
-              />,
-              <ContactPage />
-            ]}
-          />
+            <ContentCarousel
+              items={[
+                <HomePage />,
+                <ProjectPage
+                  title="tudoaqui.click"
+                  projectUrl="https://tudoaqui.click"
+                  imgSrc="./tudoaqui.webp"
+                  slug="tudoaqui"
+                />,
+                <ProjectPage
+                  title="Bolso Cheio AI"
+                  projectUrl="https://bolsocheio.ai"
+                  imgSrc="./bolsocheioai.webp"
+                  slug="bolsocheio"
+                />,
+                <ProjectPage
+                  title="ByteClass"
+                  projectUrl="https://byteclass.dev"
+                  imgSrc="./byteclass.webp"
+                  slug="byteclass"
+                />,
+                <ProjectPage
+                  title="Time Messages"
+                  projectUrl="https://timemessages.vercel.app"
+                  imgSrc="./time-messages.webp"
+                  slug="timemessages"
+                />,
+                <ProjectPage
+                  title="Horas Iguais"
+                  projectUrl="https://significadohorasiguais.com"
+                  imgSrc="./horasiguais.webp"
+                  slug="horasiguais"
+                  customClass="trophy"
+                />,
+                <ProjectPage
+                  title="Quanto falta para copa"
+                  projectUrl="https://quantofaltaparacopa.com.br"
+                  imgSrc="./quantofaltaparacopa.webp"
+                  slug="quantofaltaparacopa"
+                  customClass="trophy"
+                />,
+                <ContactPage />
+              ]}
+            />
 
-          <FloatingChat />
+            <FloatingChat />
 
-          <Samantha />
+            <Samantha />
 
-          <MessageInput />
+            <MessageInput />
 
-        </MessagesProvider>
-      </LanguageProvider>
+          </MessagesProvider>
+        </LanguageProvider>
+      </Suspense>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
