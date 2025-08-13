@@ -18,10 +18,4 @@ body {
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     padding: 0.75rem 1rem;
-
-    // Safari fix
-    will-change: transform;
-    transform: translateZ(0);
-    contain: paint;
-    isolation: isolate;
 }
