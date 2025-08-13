@@ -4,6 +4,7 @@ import { useMessages } from "../context/MessagesContext";
 export const FloatingChat = () => {
   const { messages } = useMessages();
   const [positions, setPositions] = useState<number[]>([]);
+  const [hiddenMessages, setHiddenMessages] = useState<number[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const filteredMessages = messages.filter((msg) => msg.role !== "system")
 
@@ -38,13 +39,15 @@ export const FloatingChat = () => {
     return () => cancelAnimationFrame(rafId);
   }, []);
 
+  const hideMessage = (index: number) => {
+    setHiddenMessages((prev) => [...prev, index]);
+  };
+
   return (
-    <div
-      ref={containerRef}
-      className="chat-container"
-    >
-      {filteredMessages
-        .map((msg, index) => (
+    <div ref={containerRef} className="chat-container">
+      {filteredMessages.map((msg, index) => {
+        if (hiddenMessages.includes(index)) return null;
+        return (
           <div
             key={index}
             style={{
@@ -53,10 +56,20 @@ export const FloatingChat = () => {
             }}
             className={`chat-message ${msg.role === "user" ? "user-message" : ""}`}
           >
-            {msg.role !== "user" && <h4>Samantha</h4>}
+            <div className="message-header">
+              {msg.role !== "user" && <h4>Samantha</h4>}
+              <button
+                className="close-btn"
+                onClick={() => hideMessage(index)}
+              >
+                ✕
+              </button>
+            </div>
+
             <p>{msg.content}</p>
           </div>
-        ))}
+        );
+      })}
     </div>
   );
 };
