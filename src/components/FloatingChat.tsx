@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useMessages } from "../context/MessagesContext";
+import { IoMdClose } from "react-icons/io";
 
 export const FloatingChat = () => {
   const { messages } = useMessages();
@@ -62,7 +63,7 @@ export const FloatingChat = () => {
                 className="close-btn"
                 onClick={() => hideMessage(index)}
               >
-                ✕
+                <IoMdClose />
               </button>
             </div>
 
