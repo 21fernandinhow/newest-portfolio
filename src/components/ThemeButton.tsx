@@ -17,6 +17,7 @@ export default function ThemeButton() {
         document.body.style.setProperty("--bg-color", isThemeDark ? "#1c1c1c" : "#f5f5f5");
         document.body.style.setProperty("--text-color", isThemeDark ? "#f5f5f5" : "#1c1c1c");
         document.body.style.setProperty("--secondary-text-color", isThemeDark ? "#ededed" : "#4c4c4c");
+        document.body.style.setProperty("--secondary-bg-color", isThemeDark ? "#2c2c2c" : "#fff");
         document.body.style.setProperty("--invert-value", isThemeDark ? "100" : "0");
     }
 

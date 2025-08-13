@@ -51,7 +51,7 @@ export const FloatingChat = () => {
               bottom: 0,
               transform: `translateY(-${positions[index] ?? 0}px)`,
             }}
-            className={`chat-message glass-background-container ${msg.role === "user" ? "user-message" : ""}`}
+            className={`chat-message ${msg.role === "user" ? "user-message" : ""}`}
           >
             {msg.role !== "user" && <h4>Samantha</h4>}
             <p>{msg.content}</p>
