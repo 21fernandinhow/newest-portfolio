@@ -57,8 +57,6 @@ Link do projeto: https://significadohorasiguais.com
 Link do projeto: https://quantofaltaparacopa.com.br
 
 📌 Não fale de outros assuntos fora Fernando e seu trabalho.
-📌 Você será avisada quando o usuário estiver visualizando um algum projeto. Quando isso acontecer, faça uma breve introdução do projeto 
-de até 150 caracteres.
 
 Data atual:
 `;
