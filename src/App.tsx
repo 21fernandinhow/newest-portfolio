@@ -3,6 +3,7 @@ import { FloatingChat } from "./components/FloatingChat"
 import { MessageInput } from "./components/MessageInput"
 import { Samantha } from "./components/Samantha"
 import { MessagesProvider } from "./context/MessagesContext"
+import { ContactPage } from "./pages/ContactPage"
 import { HomePage } from "./pages/HomePage"
 import { ProjectPage } from "./pages/ProjectPage"
 import './styles/index.scss'
@@ -12,6 +13,7 @@ const App = () => {
   return (
     <>
       <MessagesProvider>
+
         <ContentCarousel
           items={[
             <HomePage />,
@@ -40,16 +42,22 @@ const App = () => {
               slug="timemessages"
             />,
             <ProjectPage
-              title="Quanto falta pra copa"
-              projectUrl="https://quantofaltapracopa.com.br"
-              imgSrc="./quantofaltapracopa.webp"
-              slug="quantofaltapracopa"
+              title="Quanto falta para copa"
+              projectUrl="https://quantofaltaparacopa.com.br"
+              imgSrc="./quantofaltaparacopa.webp"
+              slug="quantofaltaparacopa"
+              customClass="trophy"
             />,
+            <ContactPage />
           ]}
         />
+
         <FloatingChat />
+
         <Samantha />
+
         <MessageInput />
+
       </MessagesProvider>
     </>
   )

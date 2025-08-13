@@ -24,3 +24,10 @@
         }
     }
 }
+
+#quantofaltaparacopa,
+#timemessages {
+    img {
+        filter: invert(var(--invert-value)) !important;
+    }
+}
