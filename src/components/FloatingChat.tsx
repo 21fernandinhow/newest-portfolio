@@ -21,7 +21,7 @@ export const FloatingChat = () => {
   useEffect(() => {
     let rafId: number;
     let lastTime: number | null = null;
-    const speed = 10; // px per second
+    const speed = 20; // px per second
 
     const animate = (time: number) => {
       if (!lastTime) lastTime = time;
