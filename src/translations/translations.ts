@@ -14,7 +14,7 @@ export const translations = {
   en: {
     samantha: {
       initialMessage:
-        "Hi! I’m Samantha, an AI created by Fernando Carvalho. You’re in his portfolio — swipe to explore the projects and use the field below to ask me questions.",
+        "Hi! I’m Samantha, an AI created by Fernando. You’re in his portfolio — swipe to explore the projects and use the field below to ask me questions.",
     },
     contact: {
       title: "Contact",
