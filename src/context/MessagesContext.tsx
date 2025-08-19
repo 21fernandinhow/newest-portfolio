@@ -13,6 +13,10 @@ interface MessagesContextType {
   isWaitingAnswer: boolean
 }
 
+interface MessageProviderProps {
+  children: React.ReactNode
+}
+
 const MessagesContext = createContext<MessagesContextType | undefined>(undefined);
 
 export const useMessages = () => {
@@ -21,7 +25,7 @@ export const useMessages = () => {
   return context;
 };
 
-export const MessagesProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const MessagesProvider = ({ children }: MessageProviderProps) => {
 
   const { translation, language } = useLanguage();
 
