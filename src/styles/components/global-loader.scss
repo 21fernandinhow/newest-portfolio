@@ -16,19 +16,9 @@
         margin-bottom: 2rem;
     }
 
-    .spinner {
-        width: 50px;
-        height: 50px;
-        border: 6px solid rgba(255, 255, 255, 0.2);
-        border-top-color: var(--highlight-color, #4ade80);
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin-bottom: 12px;
-    }
-
     .progress-text {
+        margin-top: 2rem;
         font-size: 1rem;
-        font-weight: bold;
     }
 
     @keyframes spin {

@@ -10,6 +10,7 @@ export const translations = {
     },
     typeHere: "Faça uma pergunta a Samantha...",
     you: "Você",
+    initialLoading: "Iniciando sua experiência"
   },
   en: {
     samantha: {
@@ -22,5 +23,6 @@ export const translations = {
     },
     typeHere: "Ask Samantha...",
     you: "You",
+    initialLoading: "Starting your experience"
   },
 };
