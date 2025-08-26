@@ -28,19 +28,21 @@ export const ChatDrawer = ({ isOpen }: ChatDrawerProps) => {
     }, [messages]);
 
     return (
-        <div className={`chat-drawer ${isOpen ? "open" : ""}`}>
-            <div className="chat-body" ref={messagesContainerRef}>
-                {messages.filter((msg) => msg.role !== "system").map((msg, index) => (
-                    <div
-                        key={index}
-                        className={`chat-message ${msg.role === "user" ? "user-message" : ""}`}
-                    >
-                        {msg.role === "user" ? <h4>{translation.you}</h4> : <h4>Samantha</h4>}
-                        <p>{msg.content}</p>
-                    </div>
-                ))}
+        <>
+            <div className={`chat-drawer ${isOpen ? "open" : ""}`}>
+                <div className="chat-body" ref={messagesContainerRef}>
+                    {messages.filter((msg) => msg.role !== "system").map((msg, index) => (
+                        <div
+                            key={index}
+                            className={`chat-message ${msg.role === "user" ? "user-message" : ""}`}
+                        >
+                            {msg.role === "user" ? <h4>{translation.you}</h4> : <h4>Samantha</h4>}
+                            <p>{msg.content}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
-            <MessageInput />
-        </div>
+            {isOpen && <MessageInput />}
+        </>
     );
 }
