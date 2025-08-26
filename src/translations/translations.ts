@@ -2,27 +2,39 @@ export const translations = {
   pt: {
     samantha: {
       initialMessage:
-        "Oi! Eu sou a Samantha, IA criada pelo Fernando. Você está no portfólio dele — arraste para o lado para explorar os projetos e use o campo abaixo para me fazer perguntas.",
+        "Oi, bem-vindo(a) a Galeria de Projetos do Fernando! Eu sou a Samantha, assistente de IA criada pelo Fernando para te guiar por aqui. Como posso ajudar?",
     },
     contact: {
       title: "Contato",
       description: "Aqui estão as principais formas de se conectar comigo:",
     },
-    typeHere: "Faça uma pergunta a Samantha...",
+    typeHere: "Digite aqui...",
     you: "Você",
-    initialLoading: "Iniciando sua experiência"
+    initialLoading: "Iniciando sua experiência",
+    askVariations: {
+      ask: "Pergunte",
+      askProject: "Me conte sobre o projeto ",
+      askSamantha: "Pergunte a IA",
+      needHelp: "Alguma dúvida?"
+    }
   },
   en: {
     samantha: {
       initialMessage:
-        "Hi! I’m Samantha, an AI created by Fernando. You’re in his portfolio — swipe to explore the projects and use the field below to ask me questions.",
+        "Hi! I’m Samantha, the AI assistant created by Fernando to guide you here on Fernando's Project Gallery! How can I help you?",
     },
     contact: {
       title: "Contact",
       description: "Here are the main ways to get in touch with me:",
     },
-    typeHere: "Ask Samantha...",
+    typeHere: "Type here...",
     you: "You",
-    initialLoading: "Starting your experience"
+    initialLoading: "Starting your experience",
+    askVariations: {
+      ask: "Ask",
+      askProject: "Tell me about the project ",
+      askSamantha: "Ask to AI",
+      needHelp: "Need help?"
+    }
   },
 };

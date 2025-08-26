@@ -1,0 +1,33 @@
+.ask-ai-button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--bg-color);
+    font-weight: bolder;
+
+    svg {
+        color: var(--bg-color);
+        vertical-align: text-top;
+    }
+
+    background: var(--secondary-text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+
+    &:hover {
+        box-shadow: 0px 0px 4px var(--secondary-text-color);
+        transition: 0.3s;
+    }
+}
+
+#footer-ai-button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    text-align: end;
+    p{
+        color: var(--secondary-text-color);
+        margin-bottom: 0.5rem;
+    }
+}

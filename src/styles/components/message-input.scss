@@ -11,10 +11,22 @@
     align-content: center;
     gap: 0.5rem;
 
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    // background: rgba(255, 255, 255, 0.15);
+    // backdrop-filter: blur(10px);
+    // -webkit-backdrop-filter: blur(10px);
+    background-color: var(--secondary-bg-color);
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 0.75rem 1rem;
+
     input {
         flex-grow: 1;
         font-size: 16px;
-        &::placeholder{
+
+        &::placeholder {
             color: var(--secondary-text-color);
         }
     }
@@ -33,7 +45,7 @@
         display: flex;
         align-content: center;
 
-        &:hover{
+        &:hover {
             transition: 0.3s;
             color: var(--highlight-color);
         }

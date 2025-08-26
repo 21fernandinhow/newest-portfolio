@@ -23,6 +23,15 @@
             transition: 0.3s;
         }
     }
+
+    button {
+        margin-top: 1rem;
+
+        &:hover {
+            padding: 0.5rem 1.75rem;
+            transition: 0.3s;
+        }
+    }
 }
 
 #quantofaltaparacopa,

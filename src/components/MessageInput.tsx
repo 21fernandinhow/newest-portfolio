@@ -14,7 +14,7 @@ export const MessageInput = () => {
     }
 
     return (
-        <div className="user-message-input glass-background-container">
+        <div className="user-message-input">
             <input
                 placeholder={translation.typeHere}
                 onChange={(e) => setUserInputText(e.target.value.slice(0, 250))}

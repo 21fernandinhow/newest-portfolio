@@ -1,8 +1,8 @@
-#theme-button{
+.toggle-chat-button{
     cursor: pointer;
     position: fixed;
     top: 0.5rem;
-    left: 0.5rem;
+    right: 0.5rem;
     color: var(--secondary-text-color);
     background: none;
     border: none;

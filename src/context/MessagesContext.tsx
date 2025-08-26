@@ -54,7 +54,7 @@ export const MessagesProvider = ({ children }: MessageProviderProps) => {
         body: JSON.stringify({
           model: model,
           messages: newArrayMessages, // messages
-          max_tokens: 250,
+          max_tokens: 500,
           temperature: 0.5
         }),
       });
@@ -62,7 +62,7 @@ export const MessagesProvider = ({ children }: MessageProviderProps) => {
       const data = await response.json();
       setMessages([
         ...newArrayMessages,
-        { role: 'assistant', content: data.choices[0].message.content.slice(0, 250) }
+        { role: 'assistant', content: data.choices[0].message.content }
       ]);
 
     } catch (error) {

@@ -1,7 +1,4 @@
 .global-loader {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -11,10 +8,6 @@
     background: var(--bg-color, #000);
     color: var(--text-color, #fff);
     z-index: 9999;
-
-    #home-page {
-        margin-bottom: 2rem;
-    }
 
     .progress-text {
         margin-top: 2rem;
