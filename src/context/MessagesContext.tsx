@@ -29,7 +29,9 @@ export const MessagesProvider = ({ children }: MessageProviderProps) => {
 
   const { translation, language } = useLanguage();
 
-  const apiKey = import.meta.env.VITE_OPENAI_APIKEY;
+  const encriptedKey = import.meta.env.VITE_OPENAI_APIKEY
+  const decriptedKey = atob(encriptedKey).split("").reverse().join("");
+
   const model = "gpt-3.5-turbo"
 
   const [messages, setMessages] = useState<Message[]>([
@@ -49,7 +51,7 @@ export const MessagesProvider = ({ children }: MessageProviderProps) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`,
+          'Authorization': `Bearer ${decriptedKey}`,
         },
         body: JSON.stringify({
           model: model,
