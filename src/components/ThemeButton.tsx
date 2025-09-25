@@ -4,7 +4,7 @@ import { MdSunny } from "react-icons/md";
 
 export const ThemeButton = () => {
 
-    const [theme, setTheme] = useState(localStorage.getItem('theme') ? `${localStorage.getItem('theme')}` : 'light')
+    const [theme, setTheme] = useState(localStorage.getItem('theme') ? `${localStorage.getItem('theme')}` : 'dark')
 
     const handleTheme = (currentTheme: string) => {
         const userNewTheme = currentTheme === 'dark' ? 'light' : 'dark'
