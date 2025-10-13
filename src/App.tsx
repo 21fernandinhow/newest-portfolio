@@ -35,17 +35,19 @@ const App = () => {
               openChat={() => setChatIsOpen(true)}
             />,
             <ProjectPage
-              title="Bolso Cheio AI"
-              projectUrl="https://bolsocheio.ai"
-              imgSrc="./bolsocheioai.webp"
-              slug="bolsocheio"
-              openChat={() => setChatIsOpen(true)}
-            />,
-            <ProjectPage
               title="ByteClass"
               projectUrl="https://byteclass.dev"
               imgSrc="./byteclass.webp"
               slug="byteclass"
+              openChat={() => setChatIsOpen(true)}
+            />,
+
+            <ProjectPage
+              title="Quanto falta para copa"
+              projectUrl="https://quantofaltaparacopa.com.br"
+              imgSrc="./quantofaltaparacopa.webp"
+              slug="quantofaltaparacopa"
+              customClass="trophy"
               openChat={() => setChatIsOpen(true)}
             />,
             <ProjectPage
@@ -60,14 +62,6 @@ const App = () => {
               projectUrl="https://significadohorasiguais.com"
               imgSrc="./horasiguais.webp"
               slug="horasiguais"
-              customClass="trophy"
-              openChat={() => setChatIsOpen(true)}
-            />,
-            <ProjectPage
-              title="Quanto falta para copa"
-              projectUrl="https://quantofaltaparacopa.com.br"
-              imgSrc="./quantofaltaparacopa.webp"
-              slug="quantofaltaparacopa"
               customClass="trophy"
               openChat={() => setChatIsOpen(true)}
             />,
