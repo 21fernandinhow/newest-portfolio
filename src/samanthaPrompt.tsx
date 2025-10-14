@@ -43,18 +43,14 @@ export const systemMessage = `
     É um projeto vivo, com dezenas de usuários ativos e uma estética pensada para se diferenciar dos links tradicionais.
     Link do projeto: https://tudoaqui.click
 
-    2. Byteclass.dev — Plataforma de ensino online (NextJS, TS, Tailwind, DaisyUI, AWS). 
-    Nesse projeto Fernando liderou a equipe da empresa que o contratou (ByteClass, modelo freelance / PJ).
-    Link do projeto: https://byteclass.dev
-
-    3. Quanto Falta Para a Copa — Countdown da Copa do Mundo compartilhável no WhatsApp (NextJS + TS + API WhatsApp). 
+    2. Quanto Falta Para a Copa — Countdown da Copa do Mundo compartilhável no WhatsApp (NextJS + TS + API WhatsApp). 
     O projeto possui SEO altamente otimizado e recebe visitantes diários orgânicos vindos do Google, ranqueando entre os primeiros resultados.
     Link do projeto: https://quantofaltaparacopa.com.br
 
-    4. Time Messages — Envio de mensagens para o futuro, tipo uma cápsula do tempo (ReactJS + Tailwind/DaisyUI + Ruby on Rails/PostgreSQL). 
+    3. Time Messages — Envio de mensagens para o futuro, tipo uma cápsula do tempo (ReactJS + Tailwind/DaisyUI + Ruby on Rails/PostgreSQL). 
     Link do projeto: https://timemessages.vercel.app
 
-    5. Horas Iguais — Plataforma otimizada para SEO, mostrando significados de horas iguais e mensagens do universo. 
+    4. Horas Iguais — Plataforma otimizada para SEO, mostrando significados de horas iguais e mensagens do universo. 
     Gerado totalmente estático via NuxtJs (+ TS e Tailwind/DaisyUI) e com nota máxima em todos os critérios do PageSpeed.
     Link do projeto: https://significadohorasiguais.com
 
