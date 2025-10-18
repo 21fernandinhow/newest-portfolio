@@ -3,18 +3,18 @@ import { systemMessage } from "../samanthaPrompt";
 import { useLanguage } from "./LanguageContext";
 
 export interface Message {
-  role: string
-  content: string
+  role: "user" | "assistant" | "system";
+  content: string;
 }
 
 interface MessagesContextType {
   messages: Message[];
-  sendMessageToAI: (text: string, role: string) => void;
-  isWaitingAnswer: boolean
+  sendMessageToAI: (text: string, role: "user" | "system") => void;
+  isWaitingAnswer: boolean;
 }
 
 interface MessageProviderProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 const MessagesContext = createContext<MessagesContextType | undefined>(undefined);
@@ -26,56 +26,73 @@ export const useMessages = () => {
 };
 
 export const MessagesProvider = ({ children }: MessageProviderProps) => {
-
   const { translation, language } = useLanguage();
 
-  const encriptedKey = import.meta.env.VITE_OPENAI_APIKEY
+  const encriptedKey = import.meta.env.VITE_GEMINI_APIKEY;
   const decriptedKey = atob(encriptedKey).split("").reverse().join("");
 
-  const model = "gpt-3.5-turbo"
+  const model = "gemini-2.5-flash";
 
   const [messages, setMessages] = useState<Message[]>([
-    { role: "system", content: systemMessage + new Date().toISOString() + "converse com ele no idioma: " + language },
-    { role: "assistant", content: translation.samantha.initialMessage }
-  ])
-  const [isWaitingAnswer, setIsWaitingAnswer] = useState(false)
+    {
+      role: "system",
+      content:
+        systemMessage +
+        new Date().toISOString() +
+        " converse com ele no idioma: " +
+        language,
+    },
+    {
+      role: "assistant",
+      content: translation.samantha.initialMessage,
+    },
+  ]);
 
-  const sendMessageToAI = async (messageText: string, role: string) => {
+  const [isWaitingAnswer, setIsWaitingAnswer] = useState(false);
 
-    setIsWaitingAnswer(true)
-    const newArrayMessages = [...messages, { role: role, content: messageText }]
-    setMessages(newArrayMessages)
+  const sendMessageToAI = async (messageText: string, role: "user" | "system") => {
+    setIsWaitingAnswer(true);
+    const newArrayMessages = [...messages, { role, content: messageText }];
+    setMessages(newArrayMessages);
 
     try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${decriptedKey}`,
-        },
-        body: JSON.stringify({
-          model: model,
-          messages: newArrayMessages, // messages
-          max_tokens: 500,
-          temperature: 0.5
-        }),
-      });
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${decriptedKey}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            contents: newArrayMessages.map((msg) => ({
+              role: msg.role === "assistant" ? "model" : "user",
+              parts: [{ text: msg.content }],
+            })),
+          }),
+        }
+      );
 
       const data = await response.json();
+
+      const reply =
+        data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+        "Desculpe, não consegui gerar uma resposta agora.";
+
       setMessages([
         ...newArrayMessages,
-        { role: 'assistant', content: data.choices[0].message.content }
+        { role: "assistant", content: reply },
       ]);
-
     } catch (error) {
-      console.error('Erro ao enviar a mensagem:', error);
+      console.error("Erro ao enviar a mensagem:", error);
     }
 
-    setIsWaitingAnswer(false)
-  }
+    setIsWaitingAnswer(false);
+  };
 
   return (
-    <MessagesContext.Provider value={{ messages, sendMessageToAI, isWaitingAnswer }}>
+    <MessagesContext.Provider
+      value={{ messages, sendMessageToAI, isWaitingAnswer }}
+    >
       {children}
     </MessagesContext.Provider>
   );
