@@ -35,6 +35,13 @@ const App = () => {
               openChat={() => setChatIsOpen(true)}
             />,
             <ProjectPage
+              title="ByteClass"
+              projectUrl="https://byteclass.dev"
+              imgSrc="./byteclass.webp"
+              slug="byteclass"
+              openChat={() => setChatIsOpen(true)}
+            />,
+            <ProjectPage
               title="Quanto falta para copa"
               projectUrl="https://quantofaltaparacopa.com.br"
               imgSrc="./quantofaltaparacopa.webp"
